@@ -495,3 +495,20 @@ HAVING COUNT(P.PlaylistID) > 2
 ORDER BY NUM_PLAYLISTS DESC
 GO
 
+
+--1) Musics-name-, totalSecond-, artist nama, album name showen view 
+
+
+CREATE VIEW music_totalSecond_ AS
+SELECT albumname,totalsecond,musicname
+FROM tblSong S
+WHERE Country = 'Brazil'
+GO
+
+
+--2
+CREATE VIEW albumname_songcount AS
+SELECT albumname,songCount
+FROM album
+WHERE Country = 'Brazil'
+GO
