@@ -512,3 +512,11 @@ SELECT albumname,songCount
 FROM album
 WHERE Country = 'Brazil'
 GO
+
+--3
+
+CREATE PROCEDURE SelectListeners  @ListenerCount int(15), @albumname nvarchar(10)
+AS
+SELECT * FROM song WHERE ListenerCount > @ListenerCount AND albumname = @albumname
+GO;
+EXEC SelectListeners   @ListenerCount = '3', @albumname = 'MyDearMelancholy';
